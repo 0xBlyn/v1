@@ -1,11 +1,9 @@
 'use client'
 
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { mainCharacter } from '@/images';
 import IceCube from '@/icons/IceCube';
-import { calculateEnergyLimit, calculateLevel, calculatePointsPerClick, calculateProfitPerHour, GameState, InitialGameState, useGameStore } from '@/utils/game-mechaincs';
-import WebApp from '@twa-dev/sdk';
 
 interface LoadingProps {
   setIsInitialized: React.Dispatch<React.SetStateAction<boolean>>;
@@ -13,85 +11,19 @@ interface LoadingProps {
 }
 
 export default function Loading({ setIsInitialized, setCurrentView }: LoadingProps) {
-  const initializeState = useGameStore((state: GameState) => state.initializeState);
-  const [isDataLoaded, setIsDataLoaded] = useState(false);
-  const openTimestampRef = useRef(Date.now());
-
-  const fetchOrCreateUser = useCallback(async () => {
-    try {
-      WebApp.ready();
-      let initData = WebApp.initData;
-      const telegramId = WebApp.initDataUnsafe.user?.id.toString();
-      const username = WebApp.initDataUnsafe.user?.username || 'Unknown User';
-      const telegramName = WebApp.initDataUnsafe.user?.first_name || 'Unknown User';
-
-      // Extract referrer from start parameter
-      const startParam = new URLSearchParams(WebApp.initDataUnsafe.start_param || '').get('startapp');
-      const referrerTelegramId = startParam ? startParam.replace('kentId', '') : null;
-
-      if (process.env.NEXT_PUBLIC_BYPASS_TELEGRAM_AUTH === 'true') {
-        initData = "temp";
-      }
-      let url = `/api/user?initData=${encodeURIComponent(initData)}`;
-      if (referrerTelegramId) {
-        url += `&referrer=${referrerTelegramId}`;
-      }
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error('Failed to fetch or create user');
-      }
-      const userData = await response.json();
-
-      console.log("user data: ", userData);
-
-      // Create the game store with fetched data
-      const initialState: InitialGameState = {
-        userTelegramInitData: initData,
-        userTelegramName: telegramName,
-        lastClickTimestamp: userData.lastPointsUpdateTimestamp,
-        gameLevelIndex: calculateLevel(userData.points),
-        points: userData.points,
-        pointsBalance: userData.pointsBalance,
-        unsynchronizedPoints: 0,
-        multitapLevelIndex: userData.multitapLevelIndex,
-        pointsPerClick: calculatePointsPerClick(userData.multitapLevelIndex),
-        energy: userData.energy,
-        maxEnergy: calculateEnergyLimit(userData.energyLimitLevelIndex),
-        energyRefillsLeft: userData.energyRefillsLeft,
-        energyLimitLevelIndex: userData.energyLimitLevelIndex,
-        lastEnergyRefillTimestamp: userData.lastEnergyRefillsTimestamp,
-        mineLevelIndex: userData.mineLevelIndex,
-        profitPerHour: calculateProfitPerHour(userData.mineLevelIndex)
-      };
-
-      console.log("Initial state: ", initialState);
-
-      initializeState(initialState);
-      setIsDataLoaded(true);
-    } catch (error) {
-      console.error('Error fetching user data:', error);
-      // Handle error (e.g., show error message to user)
-    }
-  }, []);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetchOrCreateUser();
-  }, [fetchOrCreateUser, setCurrentView]);
+    // Set a timeout to transition to the game after 2 seconds
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      setCurrentView('game'); // Transition to the game view
+      setIsInitialized(true); // Mark initialization as complete
+    }, 2000); // 2000 milliseconds = 2 seconds
 
-  useEffect(() => {
-    if (isDataLoaded) {
-      const currentTime = Date.now();
-      const elapsedTime = currentTime - openTimestampRef.current;
-      const remainingTime = Math.max(3000 - elapsedTime, 0);
-
-      const timer = setTimeout(() => {
-        setCurrentView('game');
-        setIsInitialized(true);
-      }, remainingTime);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isDataLoaded, setIsInitialized, setCurrentView]);
+    // Cleanup the timer on component unmount
+    return () => clearTimeout(timer);
+  }, [setCurrentView, setIsInitialized]);
 
   return (
     <div className="bg-[#1d2025] flex justify-center items-center h-screen">
