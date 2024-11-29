@@ -20,6 +20,10 @@ export default function Airdrop() {
         setCompletedTasks(prev => new Set(prev).add(task.title));
     };
 
+    useEffect(() => {
+        // Any effect that depends on points or other state can be added here
+    }, [points]);
+
     return (
         <div className="bg-black flex justify-center">
             <div className="w-full bg-black text-white h-screen font-bold flex flex-col max-w-xl">
@@ -30,7 +34,7 @@ export default function Airdrop() {
                                 <Image src={iceToken} alt="Ice Token" width={96} height={96} className="rounded-lg mr-2" />
                             </div>
                             <h1 className="text-2xl text-center mb-4">Airdrop Tasks</h1>
-                            <p className="text-gray-300 text-center mb-4 font-normal">Get ready for upcoming tasks! Soon, you'll see a list of challenges below. Complete them to qualify for the Airdrop.</p>
+                            <p className="text-gray-300 text-center mb-4 font-normal">Get ready for upcoming tasks! Soon, you&apos;ll see a list of challenges below. Complete them to qualify for the Airdrop.</p>
                             <h2 className="text-base mt-8 mb-4">Tasks list</h2>
                             <div
                                 className="flex justify-between items-center bg-[#319ee0] rounded-lg p-4 cursor-pointer"
