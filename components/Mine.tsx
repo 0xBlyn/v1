@@ -3,14 +3,15 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Hamster from '@/icons/Hamster';
-import Settings from '@/icons/Settings';
-import { binanceLogo } from '@/images';
-import IceCubes from '@/icons/IceCubes';
+import copyicon from '@/images/Group 116.png'
+// import Hamster from '@/icons/Hamster';
+// import Settings from '@/icons/Settings';
+// import { binanceLogo } from '@/images';
+// import IceCubes from '@/icons/IceCubes';
 import { calculateMineUpgradeCost, calculateProfitPerHour, useGameStore } from '@/utils/game-mechaincs';
-import Snowflake from '@/icons/Snowflake';
-import TopInfoSection from '@/components/TopInfoSection';
-import { mineUpgradeBaseBenefit, mineUpgradeBasePrice, mineUpgradeBenefitCoefficient, mineUpgradeCostCoefficient } from '@/utils/consts';
+// import Snowflake from '@/icons/Snowflake';
+// import TopInfoSection from '@/components/TopInfoSection';
+// import { mineUpgradeBaseBenefit, mineUpgradeBasePrice, mineUpgradeBenefitCoefficient, mineUpgradeCostCoefficient } from '@/utils/consts';
 import { formatNumber, showErrorMessage, showSuccessMessage } from '@/utils/ui';
 
 export default function Mine() {
@@ -62,24 +63,32 @@ export default function Mine() {
     };
 
     return (
-        <div className="bg-black flex justify-center">
-            <div className="w-full bg-black text-white h-screen font-bold flex flex-col max-w-xl">
-                <TopInfoSection />
-
-                <div className="flex-grow mt-4 bg-[#f3ba2f] rounded-t-[48px] relative top-glow z-0">
-                    <div className="absolute top-[2px] left-0 right-0 bottom-0 bg-[#1d2025] rounded-t-[46px] px-4 py-6">
-                        <h1 className="text-2xl text-center mb-6">Upgrade Ice Production</h1>
-
-                        <div className="px-4 mt-4 flex justify-center">
-                            <div className="px-4 py-2 flex items-center space-x-2">
-                                <IceCubes className="w-12 h-12 mx-auto" />
-                                <p className="text-4xl text-white" suppressHydrationWarning >{pointsBalance.toLocaleString()}</p>
-                            </div>
-                        </div>
-
-                        <div className="bg-[#272a2f] rounded-lg p-4 mt-6">
-                            <div className="flex justify-between items-center mb-4">
-                                <p>Current ice per hour:</p>
+        <div className="flex flex-col justify-center">
+            <div className='flex flex-col items-center w-full pt-7'>
+                <h1 className='heading mb-4'>Ranking</h1>
+                <h3 className='text-white text-[14px] font-medium text-center max-w-[70%]'>Strive to be among Top 100,000 members to be eligible for Matara Community Airdrop.</h3>
+                <Link href="/mranks">
+                    <div className="balance pages mt-4">
+                     See all Ranks <span className='ml-2'><Image src={copyicon} width={50} height={20} alt='' /> </span>
+                    </div>
+                </Link>
+            </div>
+            <div className="w-full px-[5%] flex items-center justify-center flex-col pt-[7%]">
+                <div className="grid grid-cols-3 gap-14 w-full mb-2 text-left border-gradient pb-4">
+                <div className="headtext">User Name</div>
+                <div className="headtext">Rank</div>
+                <div className="headtext">Earnings</div>
+            </div>
+            <div className="text-center text-gray-400 mt-4">
+                No active users yet
+              </div>
+        </div>
+        </div>
+    );
+}            
+                                
+                            
+                                {/* <p>Current ice per hour:</p>
                                 <p className="text-[#f3ba2f]">{formatNumber(profitPerHour)}</p>
                             </div>
                             <div className="flex justify-between items-center mb-4">
@@ -108,7 +117,4 @@ export default function Mine() {
                         </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    );
-}
+            </div> */}
