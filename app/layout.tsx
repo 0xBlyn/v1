@@ -22,7 +22,7 @@ export default function RootLayout({
         className={inter.className}
         style={{
           background: 'linear-gradient(359.69deg, #000F15 57.59%, #02354C 99.76%)',
-          minHeight: '100vh',
+          maxHeight: '100vh',
           margin: 0,
         }}
       >

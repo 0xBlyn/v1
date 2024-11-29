@@ -41,7 +41,7 @@ const TaskPopup: React.FC<TaskPopupProps> = ({ task, onClose, onComplete }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div className="fixed inset-0 flex justify-center items-center z-50">
       <div className="bg-[#272a2f] rounded-2xl p-6 max-w-sm w-full">
         <button onClick={onClose} className="float-right text-gray-400 hover:text-white">&times;</button>
         <Image src={imageMap[task.image]} alt={task.title} width={80} height={80} className="mx-auto mb-4" />
@@ -111,18 +111,29 @@ export default function Earn() {
   }, {} as Record<string, Task[]>);
 
   return (
-    <div className="bg-black flex justify-center">
+    <div className="flex flex-col justify-center">
       <ToastContainer />
-      <div className="w-full bg-black text-white h-screen font-bold flex flex-col max-w-xl">
-        <div className="flex-grow mt-4 bg-[#f3ba2f] rounded-t-[48px] relative top-glow z-0">
-          <div className="absolute top-[2px] left-0 right-0 bottom-0 bg-[#1d2025] rounded-t-[46px] px-4 py-6 overflow-y-auto">
-            <div className="relative min-h-full pb-20">
-              <div className="flex justify-center mb-4">
-                <IceCube className="w-24 h-24 mx-auto" />
-              </div>
-              <h1 className="text-2xl text-center mb-4">Earn More Ice</h1>
+      <div className='flex flex-col items-center w-full pt-7'>
+        <h1 className='heading mb-4'>Social Task</h1>
+        <h3 className='text-white text-[14px] font-medium text-center max-w-[70%]'>Perform Social Tasks to earn more Matara Tokens ($MAT) and grow your rank.</h3>
+      </div>
+      <div className="w-full pt-[12%] px-[5%]">
+        <div className="grid grid-cols-3 gap-4 px-4 mb-2 mb-2 text-left border-gradient pb-4">
+          <div className="headtext">Task</div>
+          <div className="headtext">Earnings</div>
+          <div className="headtext">Action</div>
+        </div>
+        <div className="text-center text-gray-400 mt-4">
+          There are no tasks for you!
+        </div>
+      </div>
+    </div>
+  );
+}
 
-              {isLoading ? (
+
+{/* 
+{isLoading ? (
                 <div className="text-center text-gray-400">Loading tasks...</div>
               ) : (
                 Object.entries(groupedTasks).map(([type, tasks]) => (
@@ -166,7 +177,4 @@ export default function Earn() {
           onClose={() => setSelectedTask(null)}
           onComplete={() => handleTaskComplete(selectedTask)}
         />
-      )}
-    </div>
-  );
-}
+      )} */}

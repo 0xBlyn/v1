@@ -4,6 +4,7 @@
 
 body{
   background: linear-gradient(359.69deg, #000F15 57.59%, #02354C 99.76%);
+  overflow-y: hidden;
 }
 
 .progress-gradient {
