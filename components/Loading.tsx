@@ -76,7 +76,7 @@ export default function Loading({ setIsInitialized, setCurrentView }: LoadingPro
 
   useEffect(() => {
     fetchOrCreateUser();
-  }, []);
+  }, [fetchOrCreateUser, setCurrentView]);
 
   useEffect(() => {
     if (isDataLoaded) {

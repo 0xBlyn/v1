@@ -30,17 +30,10 @@ export function AutoIncrement() {
 
     incrementPoints(pointsPerSecond);
 
-    
     if (!(lastClickTimestamp && ((currentTime - lastClickTimestamp) < 2000))) {
-      // console.log("Auto increment - Current time:", currentTime);
-      // console.log("Auto increment - Last click timestamp:", lastClickTimestamp);
-      // console.log("Auto increment - Time difference:", currentTime - lastClickTimestamp);
-      // console.log("Auto increment - Incrementing energy");
       incrementEnergy(pointsPerClick);
-    } else {
-      // console.log("Auto increment - Not incrementing energy yet");
     }
-  }, [incrementPoints, incrementEnergy]);
+  }, [incrementPoints, incrementEnergy, pointsPerClick]);
 
   useEffect(() => {
     const interval = setInterval(autoIncrement, 1000);

@@ -22,7 +22,7 @@ function ClickerPage() {
     const setCurrentView = useCallback((newView: string) => {
         console.log('Changing view to:', newView);
         setCurrentViewState(newView);
-    }, []);
+    }, [setCurrentViewState]);
 
     const renderCurrentView = useCallback(() => {
         if (!isInitialized) {
