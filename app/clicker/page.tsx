@@ -14,6 +14,7 @@ import Boost from '@/components/Boost';
 import { ToastContainer } from 'react-toastify';
 import { AutoIncrement } from '@/components/AutoIncrement';
 import { PointSynchronizer } from '@/components/PointSynchronizer';
+import TopInfoSection from '@/components/TopInfoSection';
 
 function ClickerPage() {
     const [currentView, setCurrentViewState] = useState<string>('loading');
@@ -62,7 +63,7 @@ function ClickerPage() {
     console.log('ClickerPage rendering. Current state:', { currentView, isInitialized });
 
     return (
-        <div className="bg-black min-h-screen text-white">
+        <div className="min-h-screen text-white">
             <ToastContainer />
             {
                 isInitialized &&

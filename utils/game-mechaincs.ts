@@ -5,16 +5,16 @@ import { calculateUpgradeBenefit, calculateUpgradeCost } from './calculations';
 import { energyUpgradeBaseBenefit, energyUpgradeBasePrice, energyUpgradeBenefitCoefficient, energyUpgradeCostCoefficient, mineUpgradeBaseBenefit, mineUpgradeBasePrice, mineUpgradeBenefitCoefficient, mineUpgradeCostCoefficient, multitapUpgradeBaseBenefit, multitapUpgradeBasePrice, multitapUpgradeBenefitCoefficient, multitapUpgradeCostCoefficient } from './consts';
 
 export const levelNames = [
-  "Ice Cube Intern",
-  "Frosty Freelancer",
-  "Chilly Consultant",
-  "Glacial Manager",
-  "Subzero Supervisor",
-  "Arctic Executive",
-  "Polar CEO",
-  "Tundra Tycoon",
-  "Iceberg Mogul",
-  "Cryogenic Crypto King"
+  "Cub Recruit",
+  "Scout",
+  "Warrior",
+  "Sergeant",
+  "Captain",
+  "Liuetenant",
+  "Commander",
+  "General",
+  "Field Marshal",
+  "Champion of Matara"
 ];
 
 export const levelMinPoints = [
@@ -40,6 +40,7 @@ export interface InitialGameState {
   lastEnergyRefillTimestamp: number;
   mineLevelIndex: number;
   profitPerHour: number;
+  matAmount: number;
 }
 
 export interface GameState extends InitialGameState {
@@ -219,5 +220,6 @@ export const useGameStore = createGameStore({
   energyLimitLevelIndex: 0,
   lastEnergyRefillTimestamp: Date.now(),
   mineLevelIndex: 0,
-  profitPerHour: 0,
+  matAmount: 0,
+  profitPerHour: 0
 });
