@@ -27,7 +27,7 @@ export default function Loading({ setIsInitialized, setCurrentView }: LoadingPro
 
   return (
     <div 
-    className="flex justify-center items-center h-[80vh]"
+    className="flex top-20 justify-center items-center h-[80vh]"
     >
       <div className="flex justify-center w-full items-center">
         <div className="w-full max-w-xl text-white flex flex-col items-center">

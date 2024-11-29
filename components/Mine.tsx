@@ -63,11 +63,11 @@ export default function Mine() {
     };
 
     return (
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center top-20 fixed">
             <div className='flex flex-col items-center w-full pt-7'>
                 <h1 className='heading mb-4'>Ranking</h1>
                 <h3 className='text-white text-[14px] font-medium text-center max-w-[70%]'>Strive to be among Top 100,000 members to be eligible for Matara Community Airdrop.</h3>
-                <Link href="/mranks">
+                <Link href="/ranks">
                     <div className="balance pages mt-4">
                      See all Ranks <span className='ml-2'><Image src={copyicon} width={50} height={20} alt='' /> </span>
                     </div>

@@ -100,7 +100,6 @@ body{
 
 .nav-text {
   background-image: linear-gradient(92.78deg, #44F58E 12.41%, #FAFAFA 81.56%);
-  box-shadow: 0px 0.2px 0.5px 0px #FFFFFF inset;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -109,8 +108,7 @@ body{
   font-weight: 1000;
   line-height: 13px;
   text-align: center;
-  
-} 
+}
 .heading {
   font-family: 'Gill Sans', sans-serif;
   font-size: 33.51px;
@@ -263,4 +261,76 @@ body{
   box-shadow: 0px 0px 40px 0px #FFC36940;
   min-width: 60%;
 
+}
+.button {
+  background: linear-gradient(90deg, #FFB939 0%, #FFD683 100%);
+  width: 75%;
+  padding: 22px 40px;
+  border-radius: 8px;
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 1000;
+  line-height: 17.27px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #000000;
+  margin-bottom: -10%;
+  position: relative;
+  z-index: 2;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(90deg, #FFD683 0%, #FFB948 100%);
+  border-radius: 11px; /* 8px + 3px border */
+  z-index: -1;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: inherit;
+  border-radius: 5px; /* 8px - 3px border */
+  z-index: -1;
+}
+
+.button:disabled {
+  background: linear-gradient(90deg, #BFA02B 0%, #C8B06A 100%);
+  color: #FFFFFF;
+  cursor: not-allowed;
+}
+
+.button:disabled::before {
+  background: linear-gradient(90deg, #C8B06A 0%, #BFA02B 100%);
+}
+
+.button:disabled::after {
+  background: linear-gradient(90deg, #BFA02B 0%, #C8B06A 100%);
+}
+
+
+
+.button:disabled {
+  background: linear-gradient(90deg, #BFA02B 0%, #C8B06A 100%);
+  color: linear-gradient(90deg, #f3ab24 0%, #ffaa00 100%);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* globals.css */
+.fixed-background {
+  background: linear-gradient(359.69deg, #000F15 57.59%, #02354C 99.76%);
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
 }

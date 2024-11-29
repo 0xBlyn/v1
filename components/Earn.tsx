@@ -111,7 +111,7 @@ export default function Earn() {
   }, {} as Record<string, Task[]>);
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex fixed top-20 flex-col justify-center">
       <ToastContainer />
       <div className='flex flex-col items-center w-full pt-7'>
         <h1 className='heading mb-4'>Social Task</h1>

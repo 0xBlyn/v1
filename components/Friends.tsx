@@ -86,7 +86,7 @@ export default function Friends() {
   }, [])
 
   return (
-    <div>
+    <div className='top-20 fixed w-full'>
       <div className='flex flex-col items-center w-full pt-7'>
         <h1 className='heading mb-6'>Referrals</h1>
         <div className="balance pages font-['Gill_Sans',sans-serif] text-lg">

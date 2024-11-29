@@ -77,7 +77,7 @@ export default function Game({ currentView, setCurrentView }: GameProps) {
   };
 
   return (
-    <div className="relative max-h-[80vh] text-white flex flex-col items-center">
+    <div className="fixed top-20 max-h-[80vh] text-white flex flex-col items-center">
       <div className="flex items-center justify-center w-full px-[10%] lg:max-w-[300px]">
         <div className="text-2xl font-bold text-right mt-7">
           <p className='text-[#4BF693] text-xs font-semibold'>Mining Mode</p>
