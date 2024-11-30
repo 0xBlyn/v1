@@ -9,6 +9,7 @@ import inactiveArrow from '@/images/inactive.png';
 import lion from '@/images/image 25.png';
 import hourglass from '@/images/image 27.png';
 import gradientBackground from '@/images/Group 113.png'
+import TopInfoSection from './TopInfoSection';
 
 interface GameProps {
   currentView: string;
@@ -78,6 +79,7 @@ export default function Game({ currentView, setCurrentView }: GameProps) {
 
   return (
     <div className="fixed top-20 max-h-[80vh] text-white flex flex-col items-center">
+      <TopInfoSection />
       <div className="flex items-center justify-center w-full px-[10%] lg:max-w-[300px]">
         <div className="text-2xl font-bold text-right mt-7">
           <p className='text-[#4BF693] text-xs font-semibold'>Mining Mode</p>

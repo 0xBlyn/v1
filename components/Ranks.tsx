@@ -17,6 +17,7 @@ import general from '@/images/general.png'
 import fieldmarshal from '@/images/marshal.png'
 import championofmatara from '@/images/champ.png'
 import rankbtn from '@/images/15.png'
+import TopSection from './TopSection';
 
 
 // Define the ranks data
@@ -95,7 +96,9 @@ export default function Ranks() {
   }
 
   return (
-    <div className="flex items-center justify-center pt-[5vh] h-full p-4 px-[15%]">
+    <div>
+      <TopSection />
+      <div className="flex items-center justify-center pt-[5vh] h-full p-4 px-[15%]">
       <div className='fixed z-[99] flex items-center justify-between w-full px-[8%] top-60'>
       <button
           onClick={handleNext}
@@ -177,5 +180,7 @@ export default function Ranks() {
         </AnimatePresence>
       </div>
     </div>
+    </div>
+
   )
 }

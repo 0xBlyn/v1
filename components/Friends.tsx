@@ -9,6 +9,7 @@ import { useGameStore } from '@/utils/game-mechaincs'
 import { showErrorMessage, showSuccessMessage } from '@/utils/ui'
 import copyicon from '@/images/Layer_1.png'
 import gradeffect from '@/images/Group 103 (4).png'
+import TopInfoSection from './TopInfoSection'
 
 interface Referral {
   username: string
@@ -86,7 +87,9 @@ export default function Friends() {
   }, [])
 
   return (
-    <div className='top-20 fixed w-full'>
+    <div>
+      <TopInfoSection />
+      <div className='top-20 fixed w-full'>
       <div className='flex flex-col items-center w-full pt-7'>
         <h1 className='heading mb-6'>Referrals</h1>
         <div className="balance pages font-['Gill_Sans',sans-serif] text-lg">
@@ -146,6 +149,8 @@ export default function Friends() {
         </div>
         <Image className='fixed bottom-0 left-0 right-0 mx-auto' src={gradeffect} width={400} height={100} alt='Gradient effect' />
       </div>
+    </div>
+    
   )
 }
 

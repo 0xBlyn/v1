@@ -13,6 +13,7 @@ import { calculateMineUpgradeCost, calculateProfitPerHour, useGameStore } from '
 // import TopInfoSection from '@/components/TopInfoSection';
 // import { mineUpgradeBaseBenefit, mineUpgradeBasePrice, mineUpgradeBenefitCoefficient, mineUpgradeCostCoefficient } from '@/utils/consts';
 import { formatNumber, showErrorMessage, showSuccessMessage } from '@/utils/ui';
+import TopInfoSection from './TopInfoSection';
 
 export default function Mine() {
     const {
@@ -63,7 +64,9 @@ export default function Mine() {
     };
 
     return (
-        <div className="flex flex-col justify-center top-20 fixed">
+        <div>
+            <TopInfoSection />
+            <div className="flex flex-col justify-center top-20 fixed">
             <div className='flex flex-col items-center w-full pt-7'>
                 <h1 className='heading mb-4'>Ranking</h1>
                 <h3 className='text-white text-[14px] font-medium text-center max-w-[70%]'>Strive to be among Top 100,000 members to be eligible for Matara Community Airdrop.</h3>
@@ -84,6 +87,8 @@ export default function Mine() {
               </div>
         </div>
         </div>
+        </div>
+        
     );
 }            
                                 

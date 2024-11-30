@@ -7,6 +7,7 @@ import { useGameStore } from '@/utils/game-mechaincs';
 import { capitalizeFirstLetter, formatNumber, showSuccessMessage } from '@/utils/ui';
 import { ToastContainer } from 'react-toastify';
 import { imageMap } from '@/images';
+import TopInfoSection from './TopInfoSection';
 
 interface Task {
   id: string;
@@ -111,7 +112,9 @@ export default function Earn() {
   }, {} as Record<string, Task[]>);
 
   return (
-    <div className="flex fixed top-20 flex-col justify-center">
+    <div>
+      <TopInfoSection />
+      <div className="flex fixed top-20 flex-col justify-center">
       <ToastContainer />
       <div className='flex flex-col items-center w-full pt-7'>
         <h1 className='heading mb-4'>Social Task</h1>
@@ -128,6 +131,8 @@ export default function Earn() {
         </div>
       </div>
     </div>
+    </div>
+    
   );
 }
 
