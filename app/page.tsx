@@ -24,7 +24,7 @@ export default function Home() {
           </div>
         </div>
         
-        <h1 className="font-['Gill_Sans',sans-serif] text-3xl font-bold">Welcome to{" "}<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFD683] to-[#FFB948]">Matara</span>
+        <h1 style={{fontFamily: 'var(--font-gill-sans), sans-serif'}} className="text-3xl font-bold">Welcome to{" "}<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFD683] to-[#FFB948]">Matara</span>
         </h1>
         
         <p className="text-base mb-6">The game is on the <Link href="/clicker" className="underline">Clicker</Link> page.</p>

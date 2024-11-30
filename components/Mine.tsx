@@ -76,8 +76,8 @@ export default function Mine() {
                     </div>
                 </Link>
             </div>
-            <div className="w-full px-[5%] flex items-center justify-center flex-col pt-[7%]">
-                <div className="grid grid-cols-3 gap-14 w-full mb-2 text-left border-gradient pb-4">
+            <div className="w-full px-[5%] flex items-center justify-center flex-col pt-[8%]">
+                <div className="grid grid-cols-3 gap-14 w-full mb-2 text-left border-gradient pb-3">
                 <div className="headtext">User Name</div>
                 <div className="headtext">Rank</div>
                 <div className="headtext">Earnings</div>

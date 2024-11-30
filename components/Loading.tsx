@@ -45,7 +45,7 @@ export default function Loading({ setIsInitialized, setCurrentView }: LoadingPro
               />
             </div>
           </div>
-          <h1 className="text-3xl font-['Gill_Sans',sans-serif] pb-4 font-bold">Loading{" "}<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFD683] to-[#FFB948]">Matara</span>
+          <h1 style={{fontFamily: 'var(--font-gill-sans), sans-serif'}} className="text-3xl pb-4 font-bold">Loading{" "}<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFD683] to-[#FFB948]">Matara</span>
         </h1>
           <div className="flex items-center space-x-2">
             <Lion className="w-8 h-8 animate-pulse" />

@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 
 const inter = Inter({ subsets: ["latin"] });
+
+const gillSans = localFont({
+  src: [
+    {
+      path: '/fonts/GillSansUltraBoNova.woff',
+      weight: '1000',
+      style: 'normal',
+    },
+    // Add other variations (italic, light, etc.) if needed
+  ],
+  variable: '--font-gill-sans', // This creates a CSS variable
+});
 
 export const metadata: Metadata = {
   title: "Matara",
@@ -17,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} fixed-background`}>
+      <body className={`${inter.className} ${gillSans.variable} fixed-background`}>
         {children}
       </body>
     </html>

@@ -121,7 +121,7 @@ export default function Earn() {
         <h3 className='text-white text-[14px] font-medium text-center max-w-[70%]'>Perform Social Tasks to earn more Matara Tokens ($MAT) and grow your rank.</h3>
       </div>
       <div className="w-full pt-[12%] px-[5%]">
-        <div className="grid grid-cols-3 gap-4 px-4 mb-2 mb-2 text-left border-gradient pb-4">
+        <div className="grid grid-cols-3 gap-4 px-4 mb-2 mb-2 text-left border-gradient pb-3">
           <div className="headtext">Task</div>
           <div className="headtext">Earnings</div>
           <div className="headtext">Action</div>

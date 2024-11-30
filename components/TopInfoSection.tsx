@@ -24,7 +24,7 @@ export default function TopInfoSection() {
                     </div>
                 </div>
                 <div className="flex">
-                    <button className="connect-btn rounded-sm mr-2">connect</button>
+                    <button className="connect-btn text-black rounded-sm mr-2">connect</button>
                     <button onClick={() => setIsMenuOpen(true)}>
                         <Image src={dehaze} alt="Menu" height={50} width={40} />
                     </button>

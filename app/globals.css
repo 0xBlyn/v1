@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body{
   background: linear-gradient(359.69deg, #000F15 57.59%, #02354C 99.76%);
   overflow-y: hidden;
@@ -103,15 +104,15 @@ body{
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-family: 'Gill Sans', sans-serif;
+  font-family: var(--font-gill-sans), sans-serif;
   font-size: 16px;
   font-weight: 1000;
   line-height: 13px;
   text-align: center;
 }
 .heading {
-  font-family: 'Gill Sans', sans-serif;
-  font-size: 33.51px;
+  font-family: var(--font-gill-sans), sans-serif;
+  font-size: 36px;
   font-weight: 1000;
   line-height: 33.51px;
   text-align: center;
@@ -169,7 +170,7 @@ body{
   border-image-slice: 1;
 }
 .gill{
-  font-family: 'Gill Sans MT', sans-serif;
+  font-family: var(--font-gill-sans), sans-serif;
 }
 .balance {
   position: relative;
@@ -216,7 +217,7 @@ body{
   box-shadow: 0px 0px 26.55px 0px rgba(255, 195, 105, 0.25);
   border: none;
   border-radius: 6px;
-  font-family: 'Gill Sans', sans-serif;
+  font-family: var(--font-gill-sans), sans-serif;
   font-size: 12px;
   font-weight: 1000;
   line-height: 11.61px;
@@ -251,7 +252,7 @@ body{
   z-index: -1;
 }
 .pages{
-  font-family: 'Gill Sans', sans-serif;
+  font-family: var(--font-gill-sans), sans-serif;
   font-size: 18px;
   font-weight: 1000;
   line-height: 18px;
@@ -267,7 +268,7 @@ body{
   width: 75%;
   padding: 22px 40px;
   border-radius: 8px;
-  font-family: 'Gill Sans', sans-serif;
+  font-family: var(--font-gill-sans), sans-serif;
   font-size: 18px;
   font-weight: 1000;
   line-height: 17.27px;
