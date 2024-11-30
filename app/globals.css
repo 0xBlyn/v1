@@ -78,8 +78,23 @@ body{
   position: relative;
   overflow: hidden;
   padding: 2px; /* Adjust padding to simulate border width */
-  background: linear-gradient(92.78deg, #012130 12.41%, #02354C 81.56%);
+  background: linear-gradient(92.78deg, #012130 12.41%, #02354C 81.56%); /* Default background */
   box-shadow: 0px -5px 10px 0px #FFC36940;
+  transition: background 0.3s ease; /* Smooth transition for background */
+}
+
+.footer-btn.active {
+  background: linear-gradient(90deg, #FFB939 0%, #FFD683 100%) !important; /* Active state background */
+  border: 3px solid transparent; /* Optional border */
+  box-shadow: 0px -5px 10px 0px #FFC36940; /* Keep the shadow */
+}
+
+.footer-btn.active > div {
+  background: transparent; /* Ensure the inner div does not override the button's background */
+}
+
+.footer-btn.active > div > p {
+  color: #000000; /* Change text color if needed */
 }
 
 .footer-btn::before {
@@ -89,13 +104,17 @@ body{
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(92.78deg, #012130 12.41%, #02354C 81.56%);
+  background: linear-gradient(92.78deg, #012130 12.41%, #02354C 81.56%); /* Default background for before */
   z-index: -1;
   margin: -2px; /* Adjust to match padding */
 }
 
+.footer-btn.active::before {
+  background: linear-gradient(90deg, #FFB939 0%, #FFD683 100%); /* Active state background for before */
+}
+
 .footer-btn > div {
-  background: linear-gradient(92.78deg, #000F15 12.41%, #02354C 81.56%);
+  background: linear-gradient(92.78deg, #000F15 12.41%, #02354C 81.56%); /* Default inner background */
   padding: 10px;
 }
 

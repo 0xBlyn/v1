@@ -111,9 +111,15 @@ export default function Game({ currentView, setCurrentView }: GameProps) {
           <p className='font-semibold text-2xl leading-none'>{earningsPerSecond.toFixed(4)} <span className='text-lg leading-none font-base'>$MAT/Sec</span></p>
         </div>
       </div>
-      <p className="mb-3 sm:py-1 pt-1 z-[9999] -mt-2 text-transparent bg-clip-text" style={{ backgroundImage: ' linear-gradient(90deg, #FFD683 0%, #FFB948 100%)' }}>
-        Mining Resets in <span style={{ color: '#fff' }}>{timeLeft}</span>
-      </p>
+      {isMiningActive ? (
+        <p className="mb-3 sm:py-1 pt-1 z-[9999] -mt-2 text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #FFD683 0%, #FFB948 100%)' }}>
+          Mining Resets in <span style={{ color: '#fff' }}>{timeLeft}</span>
+        </p>
+      ) : (
+        <p className="mb-3 sm:py-1 pt-1 z-[9999] -mt-2 text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #FFD683 0%, #FFB948 100%)' }}>
+          Start your Daily Mining
+        </p>
+      )}
       <button
         onClick={handleButtonClick}
         className="button lg:max-w-[200px] lg:-mt-0"
