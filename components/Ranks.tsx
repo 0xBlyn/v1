@@ -163,15 +163,15 @@ export default function Ranks() {
             </motion.p>
 
             </motion.div>
-            <p 
-                className="fixed bottom-0 font-['Montserrat',_sans-serif] text-[16px] font-normal text-center underline underline-offset-[0.35em] decoration-skip-ink-none pb-3"
-                style={{
-                  background: 'background: linear-gradient(360deg, #CDCBC8 0%, #88837B 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}>Your Current $MAT and Rank</p>
+            <h1
+      className="
+        fixed bottom-32 w-full
+        font-['Montserrat',_sans-serif] text-[16px] font-normal text-center
+        underline underline-offset-[0.35em] decoration-skip-ink-none pb-3 z-10
+        bg-gradient-to-t from-[#CDCBC8] to-[#88837B] text-transparent bg-clip-text
+      "
+    >Your Current $MAT and Rank</h1>
             <div className='w-full flex-col flex items-center justify-center fixed bottom-20'>
-               
                 <Image src={rankbtn} alt='' width={300} height={50} />
               </div>
         </AnimatePresence>
