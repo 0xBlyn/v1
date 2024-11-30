@@ -16,6 +16,7 @@ import commander from  '@/images/commander.png'
 import general from '@/images/general.png'
 import fieldmarshal from '@/images/marshal.png'
 import championofmatara from '@/images/champ.png'
+import rankbtn from '@/images/15.png'
 
 
 // Define the ranks data
@@ -95,7 +96,7 @@ export default function Ranks() {
 
   return (
     <div className="flex items-center justify-center pt-[5vh] h-full p-4 px-[15%]">
-      <div className='fixed z-[99] flex items-center justify-between w-full px-[8%] top-[30vh]'>
+      <div className='fixed z-[99] flex items-center justify-between w-full px-[8%] top-60'>
       <button
           onClick={handleNext}
           className=""
@@ -111,7 +112,7 @@ export default function Ranks() {
           <Image src={chevronleft} width={50} height={50} alt='' />
         </button>
       </div>
-      <div className="relative w-full max-w-sm">
+      <div className="relative w-full max-w-sm flex flex-col items-center">
         <AnimatePresence mode="wait">
         <motion.div
             key={currentIndex}
@@ -119,7 +120,7 @@ export default function Ranks() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="flex flex-col items-center space-y-4 p-8"
+            className="flex flex-col top-40 w-full fixed items-center space-y-1 p-8"
           >
             <motion.div
               initial={{ scale: 0.8 }}
@@ -129,8 +130,8 @@ export default function Ranks() {
               <Image
                 src={ranks[currentIndex].image}
                 alt={`${ranks[currentIndex].name} rank badge`}
-                width={200}
-                height={200}
+                width={150}
+                height={150}
                 className="object-contain"
               />
             </motion.div>
@@ -138,7 +139,7 @@ export default function Ranks() {
             <motion.h2
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-[22.42px] font-bold leading-[26.91px] text-center font-[1000] text-[28px] pt-2 underline max-w-[80%] leading-[30px] underline-offset-[0.35em] decoration-skip-ink-none"
+              className="text-[22.42px] font-bold  text-center font-[1000] text-[28px] pt-2 underline max-w-[80%] leading-[30px] underline-offset-[0.35em] decoration-skip-ink-none"
               style={{
                 background: 'linear-gradient(92.78deg, #44F58E 12.41%, #FAFAFA 81.56%)',
                 WebkitBackgroundClip: 'text',
@@ -160,13 +161,19 @@ export default function Ranks() {
             >
               {ranks[currentIndex].range}
             </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              
-            ></motion.div>
-          </motion.div>
+
+            </motion.div>
+            <p 
+                className="fixed bottom-0 font-['Montserrat',_sans-serif] text-[16px] font-normal text-center underline underline-offset-[0.35em] decoration-skip-ink-none pb-3"
+                style={{
+                  background: 'background: linear-gradient(360deg, #CDCBC8 0%, #88837B 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}>Your Current $MAT and Rank</p>
+            <div className='w-full flex-col flex items-center justify-center fixed bottom-20'>
+               
+                <Image src={rankbtn} alt='' width={300} height={50} />
+              </div>
         </AnimatePresence>
       </div>
     </div>
