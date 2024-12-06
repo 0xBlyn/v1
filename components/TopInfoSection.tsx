@@ -19,6 +19,9 @@ export default function TopInfoSection() {
                     <Link href='/clicker'>
                         <Image src={badge} width={40} height={40} alt='Badge' />
                     </Link>
+                    <span>
+                        {userTelegramName}
+                    </span>
                     <div className="balance ml-[5%]">
                         {matAmount.toFixed(3)}<span className="ml-1">$MAT</span>
                     </div>

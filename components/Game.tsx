@@ -10,7 +10,6 @@ import lion from '@/images/image 25.png';
 import hourglass from '@/images/image 27.png';
 import gradientBackground from '@/images/Group 113.png'
 import TopInfoSection from './TopInfoSection';
-
 interface GameProps {
   currentView: string;
   setCurrentView: (newView: string) => void;
@@ -78,9 +77,9 @@ export default function Game({ currentView, setCurrentView }: GameProps) {
   };
 
   return (
-    <div className="fixed top-20 max-h-[80vh] text-white flex flex-col items-center">
+    <div className="fixed w-full top-20 max-h-[80vh] text-white flex flex-col items-center justify-center">
       <TopInfoSection />
-      <div className="flex items-center justify-center w-full px-[10%] lg:max-w-[300px]">
+      <div className="flex items-center justify-center w-full h-full px-[10%] mt-16 lg:max-w-[300px]">
         <div className="text-2xl font-bold text-right mt-7">
           <p className='text-[#4BF693] text-xs font-semibold'>Mining Mode</p>
           <p
@@ -95,7 +94,7 @@ export default function Game({ currentView, setCurrentView }: GameProps) {
           </p>
         </div>
         <div className="relative flex items-center justify-center w-full lg:mx-0 -mx-[8%]">
-          <div className="relative justify-center">
+          <div className="relative  justify-center">
             <Image className='sm:w-[120px]' src={hourglass} alt="Hourglass" width={80} height={80} />
             <Image
               src={isMiningActive ? activeArrow : inactiveArrow}
@@ -116,21 +115,21 @@ export default function Game({ currentView, setCurrentView }: GameProps) {
           Mining Resets in <span style={{ color: '#fff' }}>{timeLeft}</span>
         </p>
       ) : (
-        <p className="mb-3 sm:py-1 pt-1 z-[9999] -mt-2 text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #FFD683 0%, #FFB948 100%)' }}>
+        <p className="mb-3 sm:py-1 pt-5 z-[9999] -mt-2 text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #FFD683 0%, #FFB948 100%)' }}>
           Start your Daily Mining
         </p>
       )}
+      {/* <div>
+        <Image className='w-full left-0 -z-[9999999]' src={gradientBackground} width={400} height={500} alt='' />
+      </div> */}
+      <div className='fixed bottom-0 flex flex-col items-center'>
       <button
         onClick={handleButtonClick}
-        className="button lg:max-w-[200px] lg:-mt-0"
+        className="button lg:max-w-[200px] lg:-mt-0 relative -top-5"
         disabled={isMiningActive}
       >
         Claim Daily Matara
       </button>
-      <div>
-        <Image className='w-full left-0 -z-[9999999]' src={gradientBackground} width={400} height={500} alt='' />
-      </div>
-      <div className='fixed bottom-0'>
         <Image className='min-w-[100vw] flex  bottom-0 lg:max-w-[300px]' src={lion} alt="Main Character" width={100} height={100} />
       </div>
     </div>

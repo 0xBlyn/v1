@@ -5,13 +5,14 @@ import Image from 'next/image'
 import ArrowDown from '@/images/+Layer 1.png'
 import TopSection from './TopSection'
 import user from '@/images/User.png'
-import btn from '@/images/15.png'
+import btn from '@/images/15.png';
+import { useGameStore } from '@/utils/game-mechaincs';
+
 
 interface TaskEntry {
   title: string
   completed: boolean
 }
-
 export default function Profile() {
   const [tasks, setTasks] = useState<TaskEntry[]>([
     { title: 'Complete Task 1', completed: true },
@@ -19,7 +20,8 @@ export default function Profile() {
     { title: 'Complete Task 3', completed: true },
     { title: 'Complete Task 4', completed: true },
     { title: 'Complete Task 5', completed: false },
-  ])
+  ]);
+  const {userTelegramName} = useGameStore();
 
   const completedTasksCount = tasks.filter(task => task.completed).length
 
@@ -42,10 +44,10 @@ export default function Profile() {
           height={300}
           className='mt-2'
         />
-        {/* <div className="flex-1">
-          <h1 className="text-xl font-bold mb-1">Chris John</h1>
+        <div className="flex-1">
+          <h1 className="text-xl font-bold mb-1">NaME{userTelegramName}</h1>
           <p className="text-gray-400 text-sm">@thechrisjohn</p>
-        </div> */}
+        </div>
       </div>
 
       {/* Completed Tasks Count */}
