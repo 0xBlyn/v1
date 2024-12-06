@@ -4,8 +4,23 @@ import Image from 'next/image';
 import { mainCharacter } from '@/images';
 import Lion from '@/icons/Lion';
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    // Only load Eruda on the client-side
+    if (typeof window !== 'undefined' && !window.eruda) {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/eruda';
+      script.onload = () => {
+        if (window.eruda) {
+          window.eruda.init();
+        }
+      };
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <div className="flex justify-center items-center h-[85vh]">
       <div className="w-full max-w-xl text-white flex flex-col items-center">
